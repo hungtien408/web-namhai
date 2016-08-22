@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="site-sub.master.cs" Inherits="site_sub" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+     <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+     </asp:ContentPlaceHolder>
+   <div id="footer">
+        <div class="container">
+			<div class="row">
+			<div class="col-md-6">
+                <div class="contact">
+					<ul class="list-address">
+                        <li>12 Bis - Tôn Đản, Phường 13, Quận 4, TP. Hồ Chí Minh</li>
+                        <li>Điện thoại: (08) 3826 1441 - 3826 1442  |  Fax: (0.8) 3940 4625 - 3941 4609</li>
+                        <li>Email:<a target="_blank" href="mailto:namhaico@hcm.vnn.vn"> namhaico@hcm.vnn.vn</a>  |  Website:<a target="_blank" href="http://www.namhaico.com.vn"> www.namhaico.com.vn </a></li>
+                    </ul>
+                </div>
+			</div>
+			<div class="col-md-6">
+					<div class="copyright-bg">
+                        <div class="follow">
+                            <span>Follow us on</span>
+                            <a href="#"><img src="assets/images/follow1.png" /></a>
+                            <a href="#"><img src="assets/images/follow2.png" /></a>   
+                            <a href="#"><img src="assets/images/follow3.png" /></a>
+                            <a href="#"><img src="assets/images/follow4.png" /></a>   
+                        </div>
+                        <div class="copyright">
+                <p>&copy; 2016 Nam Hai Co. All rights reserved.</p>
+                <p><a target="_blank" href="http://www.tranlegroup.com"> Thiet ke web Tran Le </a></p>
+					</div>
+                </div>   
+			</div>
+		</div>
+      </div>
+       
+    </div>   
+</asp:Content>
+

@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/site-sub.master" AutoEventWireup="true" CodeFile="site-partner.master.cs" Inherits="site_partner" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+     </asp:ContentPlaceHolder>
+    <div id="partner-bg">
+            <div class="container">
+                    <div id="silderPartner" class="slider">
+                <div class="slide">
+                    <div class="product-box">
+                        <a href="#" class="product-img"><img class="hideo" src="assets/images/anova.png" alt=""/></a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="product-box">
+                        <a href="#" class="product-img"><img class="hideo" src="assets/images/bhd.png" alt=""/></a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="product-box">
+                        <a href="#" class="product-img"><img class="hideo" src="assets/images/bhd_ciname.png" alt=""/></a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="product-box">
+                        <a href="#" class="product-img"><img class="hideo" src="assets/images/bio.png" alt=""/></a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="product-box">
+                        <a href="#" class="product-img"><img class="hideo" src="assets/images/Frieslandcampina.png" alt=""/></a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="product-box">
+                        <a href="#" class="product-img"><img class="hideo" src="assets/images/johnson.png" alt=""/></a>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="product-box">
+                        <a href="#" class="product-img"><img class="hideo" src="assets/images/lacviet.png" alt=""/></a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+</asp:Content>
+

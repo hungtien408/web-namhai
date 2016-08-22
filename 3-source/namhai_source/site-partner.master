@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/site-sub.master" AutoEventWireup="true"
+    CodeFile="site-partner.master.cs" Inherits="site_partner" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+    <div id="partner-bg">
+        <div class="container">
+            <div id="silderPartner" class="slider">
+                <asp:ListView ID="lstPartner" runat="server" DataSourceID="odsPartner" EnableModelValidation="True">
+                    <ItemTemplate>
+                        <div class="slide">
+                            <div class="product-box">
+                                <a href="javascript:void(0);" class="product-img">
+                                    <img class="hideo" alt='<%# Eval("PartnerImage") %>' src='<%# !string.IsNullOrEmpty(Eval("PartnerImage").ToString()) ? "~/res/partner/" + Eval("PartnerImage") : "~/assets/images/anova.png" %>'
+                                        runat="server" />
+                                </a>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                    <LayoutTemplate>
+                        <span runat="server" id="itemPlaceholder" />
+                    </LayoutTemplate>
+                </asp:ListView>
+                <asp:ObjectDataSource ID="odsPartner" runat="server" SelectMethod="PartnerSelectAll"
+                    TypeName="TLLib.Partner">
+                    <SelectParameters>
+                        <asp:Parameter Name="Keyword" Type="String" />
+                        <asp:Parameter Name="PartnerName" Type="String" />
+                        <asp:Parameter Name="Address" Type="String" />
+                        <asp:Parameter Name="LinkWebsite" Type="String" />
+                        <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                        <asp:Parameter Name="Priority" Type="String" />
+                        <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                    </SelectParameters>
+                </asp:ObjectDataSource>
+            </div>
+        </div>
+    </div>
+</asp:Content>

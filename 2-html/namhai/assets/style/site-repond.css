@@ -1,0 +1,261 @@
+﻿/*================================responsive=================================*/
+/*========================reponsite===============================================================================*/
+ .desktop-showhide, .desktop-992
+ {
+     display: block;
+ }
+ .mobile-showhide, .ipadmo-992
+ {
+     display: none;
+ }
+ .menu-sroll
+ {
+    -webkit-box-shadow: 0 3px 5px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    0 3px 5px #ccc;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         0 3px 5px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+     position: fixed;
+     z-index: 9997;
+ }
+ /* Large desktop */
+@media screen and (min-width: 1195px) {
+    .container {
+        width: 1200px;
+        margin:0 auto;
+        padding:0;
+    }
+}
+@media screen and (max-width: 1199px){
+    #header .logo {
+        margin-top: 10px;
+        width: 200px;
+    }
+    /*#menu > li > a {
+        font-size:14px;
+        padding:0 15px;
+    }*/
+    .colContent {
+    float: right;
+    margin-left: 15px;
+    margin-top: 20px;
+    width: 660px;
+}
+}
+@media (min-width: 993px) and (max-width: 1199px) {
+    
+}
+
+@media (max-width: 992px) {
+    #menuMobiles li.icon-home {
+        display:none;
+    }
+    .ipadmo-992 {
+        display: block;
+    }
+    .desktop-992 {
+        display: none;
+    }
+    
+    .header-right {
+        padding-top: 0;
+    }
+    #header .logo {
+        margin-top:15px;
+    }
+    .navbar-header {
+        float: none;
+    }
+    #menu {
+        float: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    #menu > li > a {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+    .img-banner > img {
+    width: 60%;
+}
+    .copyright {
+        width:100%;
+        text-align:center;
+    }
+    .list-address {
+        text-align:center;
+    }
+    .about-us {
+        width:100%;
+    }
+    
+}
+@media screen and (max-width: 991px){
+	    header .col-md-3{
+		    width:35%;
+		    display: inline-block;
+		    transition: all 0.5s ease;
+	    }
+	    header .col-md-9 {
+		    display: inline-block;
+		    float: right;
+		    width: 60%;
+		    transition: all 0.5s ease;
+	    }
+        .navbar-brand {
+            margin-left:-4px !important;
+        }
+	    nav{
+		    width: 100%;
+		    transition: all 0.5s ease;
+	    }
+	    .nav > li > a {
+		    font-size: 14px;
+		    padding: 0 20px;
+		    transition: all 0.5s ease;
+	    }
+        .copyright-bg {
+            float:none;
+            text-align:center;
+            padding:0 0 21px 0;
+        }
+        .colAside {
+            width:100%;
+            height:auto;
+        }
+        .list-gallery .gallery-img {
+        float: left;
+        margin-bottom: 15px;
+        padding: 0 10px;
+        width: 33.3%;
+        height:175px;
+    }
+    .colContent {
+        width:100%;
+        margin-left:0;
+    }
+    .wrap-contact .col-md-6:first-child {
+        border-right:none;
+    }
+}
+
+		
+@media screen and (max-width: 970px) {
+
+    
+}
+@media screen and (max-width: 820px) {
+}
+        
+        /* Portrait tablet to landscape and desktop */
+        @media (min-width: 768px) and (max-width: 992px)
+        { 
+            header {
+                height:auto;
+            }
+            .add-mail {
+                margin-bottom: 10px;
+            }
+            .tp-bullets {
+                display:none;
+            }
+           
+        }
+		@media screen and (max-width: 767px){
+            #header {
+                position:relative;
+            }
+            .text-banner p {
+                margin-bottom:0;
+            }
+            .text-banner strong {
+                font-size:20px;
+            }
+            .text-banner p {
+                font-size:12px;
+            }
+            .list-product {
+                width:100%;
+            }
+                .list-product ul li {
+                    margin:5px 10px;
+                }
+		}
+        @media screen and (max-width: 750px) {
+            .list-gallery .gallery-img {
+                height:165px;
+            }
+        }
+         @media screen and (max-width: 710px) {
+            .list-gallery .gallery-img {
+                height:145px;
+            }
+        }
+		@media screen and (max-width: 639px){
+            .product-tb .col-xs-4, .partner-tb .col-xs-4, .news-tb .col-xs-4 {
+                width:50%;
+            }
+            .wrap-send .col-xs-6 {
+                width: 100%;
+            }
+             .list-gallery .gallery-img {
+                height:130px;
+            }
+		}
+        @media screen and (max-width: 510px) {
+            .list-gallery .gallery-img {
+                height:110px;
+            }
+        }
+		@media screen and (max-width: 495px){
+			
+           .list-gallery .gallery-img {
+                height:95px;
+            }
+           
+		}
+		@media screen and (max-width: 479px){
+            .menu-mo span {
+                font-size:20px;
+            }
+            .menu-mo {
+                font-size:13px;
+            }
+            .text-banner {
+                bottom:10px;
+                left:10px;
+            }
+		}
+        @media screen and (max-width: 420px) {
+            .list-gallery .gallery-img {
+                height:80px;
+            }
+        }
+        @media screen and (max-width: 380px) {
+             .product-tb .col-xs-4, .partner-tb .col-xs-4, .news-tb .col-xs-4 {
+                width:100%;
+            }
+            .list-gallery .gallery-img {
+                width:50%;
+            }
+            .gallery-bg .col-xs-6 {
+                width:100%;
+            }
+             .list-gallery .gallery-img {
+                height:115px;
+            }
+        }
+        @media screen and (max-width: 320px) {
+            .list-gallery .gallery-img {
+                height:91px;
+            }
+        }   
+		@media screen and (max-width: 320px){
+             
+             .menu-mo span {
+                font-size:16px;
+            }
+            .menu-mo {
+                font-size:10px;
+            }
+
+		}
