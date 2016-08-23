@@ -164,7 +164,7 @@
                             <td>
                                 <asp:CheckBox ID="chkSelect" runat="server" ToolTip="Chọn" CssClass="select vam"
                                     onchange="if($(this).find('input:checkbox').attr('checked') == false) $('.selectall').removeAttr('checked');" />
-                                <asp:RadNumericTextBox ID="txtPriority" runat="server" Width="35px" Height="13px"
+                                <asp:RadNumericTextBox ID="txtPriority" runat="server" Width="35px" Height="20px"
                                     Text='<%# Eval("Priority") %>' EmptyMessage="Thứ tự..." Type="Number" ToolTip="Thứ tự">
                                     <NumberFormat AllowRounding="false" DecimalDigits="0" GroupSeparator="." />
                                 </asp:RadNumericTextBox>
@@ -194,9 +194,10 @@
                                     Culture="vi-VN" Language="vi-VN" InputSize="70" AllowedFileExtensions=".jpg,.jpeg,.gif,.png" />
                                 <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Sai định dạng ảnh (*.jpg, *.jpeg, *.gif, *.png)"
                                     ClientValidationFunction="validateRadUpload" Display="Dynamic"></asp:CustomValidator>
+                                <span class="required">(Kích thước 850px x 850px)</span>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="invisible">
                             <td class="left">
                                 Tiêu đề ảnh
                             </td>
@@ -204,7 +205,7 @@
                                 <asp:TextBox ID="txtTitle" Width="500px" runat="server"></asp:TextBox>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="invisible">
                             <td class="left" valign="top">
                                 Mô tả
                             </td>
@@ -212,7 +213,7 @@
                                 <asp:TextBox ID="txtDescription" runat="server" Width="500px"></asp:TextBox>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="invisible">
                             <td class="left">
                                 Tiêu đề ảnh(En)
                             </td>
@@ -220,7 +221,7 @@
                                 <asp:TextBox ID="txtTitleEn" Width="500px" runat="server"></asp:TextBox>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="invisible">
                             <td class="left" valign="top">
                                 Mô tả
                             </td>
@@ -267,7 +268,7 @@
                     <h3 class="searchTitle clear">
                         Cập Nhật Ảnh</h3>
                     <table class="search">
-                        <tr>
+                        <tr class="invisible">
                             <td class="left">
                                 File ảnh
                             </td>
@@ -282,7 +283,7 @@
                                     Height='150' Width="150" ResizeMode="Fit" />
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="invisible">
                             <td class="left">
                                 Tiêu đề ảnh
                             </td>
@@ -290,7 +291,7 @@
                                 <asp:TextBox ID="txtTitle" Width="500px" runat="server" Text='<%# Bind("Title") %>'></asp:TextBox>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="invisible">
                             <td class="left" valign="top">
                                 Mô tả
                             </td>
@@ -298,7 +299,7 @@
                                 <asp:TextBox ID="txtDescription" runat="server" Width="500px" Text='<%# Bind("Descripttion")%>'></asp:TextBox>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="invisible">
                             <td class="left">
                                 Tiêu đề ảnh(En)
                             </td>
@@ -306,7 +307,7 @@
                                 <asp:TextBox ID="txtTitleEn" Width="500px" runat="server" Text='<%# Bind("TitleEn") %>'></asp:TextBox>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="invisible">
                             <td class="left" valign="top">
                                 Mô tả(En)
                             </td>

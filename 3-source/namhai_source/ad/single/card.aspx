@@ -498,15 +498,15 @@
                                 LegendText="{0} rates"></isp:ContentRating>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn HeaderStyle-Width="1%" Visible="False">
+                    <asp:GridTemplateColumn HeaderStyle-Width="1%">
                         <ItemTemplate>
                             <div style="width: 36px">
                                 <img alt="Thư viện ảnh" title="Thư viện ảnh" src="../assets/images/PhotoAlbum.png"
                                     onclick="openWindow('productphotoalbum.aspx?PI=<%# Eval("ProductID") %>','Thư viện ảnh')"
                                     style="cursor: pointer" />
-                                <img alt="File Download" title="File Download" src="../assets/images/filedownload.png"
+                                <%--<img alt="File Download" title="File Download" src="../assets/images/filedownload.png"
                                     onclick="openWindow('productdownload.aspx?PI=<%# Eval("ProductID") %>','File Download')"
-                                    style="cursor: pointer" />
+                                    style="cursor: pointer" />--%>
                             </div>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
@@ -877,7 +877,7 @@
                                         </div>
                                         </div>
                                     </td>
-                                    <td valign="top" class="invisible">
+                                    <td valign="top">
                                         <div class="sub_box">
                                             <div class="head">
                                                 Ảnh sản phẩm</div>
@@ -888,6 +888,7 @@
                                                         AllowedFileExtensions="jpg,jpeg,gif,png" Localization-Select="Chọn" Localization-Cancel="Hủy"
                                                         Localization-Remove="Xóa" OnFileUploaded="FileImageAlbum_FileUploaded">
                                                     </asp:RadAsyncUpload>
+                                                    <span class="required">(Kích thước 850px x 850px)</span>
                                                     <asp:RadButton ID="btnUpload" runat="server" Text="Tải lên" ShowPostBackMask="False">
                                                         <Icon PrimaryIconUrl="~/ad/assets/images/up.png" />
                                                     </asp:RadButton>
@@ -926,7 +927,7 @@
                                                                         <tr>
                                                                             <td valign="top" style="padding-right: 10px">
                                                                                 <table class="search" width="100%">
-                                                                                    <tr>
+                                                                                    <tr class="invisible">
                                                                                         <td class="left" style="width: 70px">
                                                                                             Tiêu đề ảnh
                                                                                         </td>
@@ -936,7 +937,7 @@
                                                                                             </asp:RadTextBox>
                                                                                         </td>
                                                                                     </tr>
-                                                                                    <tr>
+                                                                                    <tr class="invisible">
                                                                                         <td class="left" valign="top">
                                                                                             Mô tả
                                                                                         </td>
