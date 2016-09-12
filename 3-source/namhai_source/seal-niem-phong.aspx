@@ -27,7 +27,7 @@
             </SelectParameters>
         </asp:ObjectDataSource>
         <div class="text-banner">
-            <p><strong>THIẾT KẾ IN ẤN</strong></p>
+            <p><strong>SEAL NIÊM PHONG</strong></p>
             <p>NHỮNG SẢN PHẨM SEAL NIÊM PHONG CỦA NAM HẢI</p>
         </div>
   </div>
