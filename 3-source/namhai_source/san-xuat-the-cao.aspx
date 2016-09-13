@@ -29,7 +29,7 @@
         </asp:ObjectDataSource>
         <div class="text-banner">
             <p>
-                <strong>THIẾT KẾ IN ẤN</strong></p>
+                <strong>SẢN XUẤT THẺ CÀO</strong></p>
             <p>
                 NHỮNG SẢN PHẨM THẺ CÀO CỦA NAM HẢI</p>
         </div>
