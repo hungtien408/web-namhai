@@ -120,7 +120,7 @@ public partial class ad_single_photoalbum : System.Web.UI.Page
             string strPhotoAlbumCategoryName = ((RadTextBox)row.FindControl("txtPhotoAlbumCategoryName")).Text.Trim();
             string strPhotoAlbumCategoryNameEn = ((RadTextBox)row.FindControl("txtPhotoAlbumCategoryNameEn")).Text.Trim();
             string strConvertedPhotoAlbumCategoryName = Common.ConvertTitle(strPhotoAlbumCategoryName);
-            string strProductCategoryID = ((RadComboBox)row.FindControl("ddlCategory")).SelectedValue;
+            string strProductCategoryID = "1";//((RadComboBox)row.FindControl("ddlCategory")).SelectedValue;
             string strImageName = FileImageName.UploadedFiles.Count > 0 ? FileImageName.UploadedFiles[0].GetName() : "";
             string strIsAvailable = ((CheckBox)row.FindControl("chkIsAvailable")).Checked.ToString();
             string strIsShowOnMenu = ((CheckBox)row.FindControl("chkIsShowOnMenu")).Checked.ToString();
@@ -225,14 +225,8 @@ public partial class ad_single_photoalbum : System.Web.UI.Page
             var FileImageName = (RadUpload)row.FindControl("FileImageName");
             var ddlProductCategory = (RadComboBox)row.FindControl("ddlCategory");
             var dv = (DataView)ObjectDataSource1.Select();
-            var PhotoAlbumCategoryID = ((HiddenField)row.FindControl("hdnPhotoAlbumCategoryID")).Value;
-            if (!string.IsNullOrEmpty(PhotoAlbumCategoryID))
-            {
-                dv.RowFilter = "PhotoAlbumCategoryID = " + PhotoAlbumCategoryID;
-
-                if (!string.IsNullOrEmpty(dv[0]["ProductCategoryID"].ToString()))
-                    ddlProductCategory.SelectedValue = dv[0]["ProductCategoryID"].ToString();
-            }
+            if (!string.IsNullOrEmpty(dv[0]["ProductCategoryID"].ToString()))
+                ddlProductCategory.SelectedValue = dv[0]["ProductCategoryID"].ToString();
 
             RadAjaxPanel1.ResponseScripts.Add(string.Format("window['UploadId'] = '{0}';", FileImageName.ClientID));
         }

@@ -147,8 +147,8 @@
                         </Items>--%>
                     </asp:RadMenuItem>
                     <asp:RadMenuItem runat="server" Owner="RadMenu1" PostBack="False" Text="Seal Niêm Phong"
-                        Font-Bold="True" NavigateUrl="~/ad/single/seal.aspx">
-                        <%--<Items>
+                        Font-Bold="True">
+                        <Items>
                             <asp:RadMenuItem runat="server" NavigateUrl="~/ad/single/seal.aspx" Text="Bài Viết">
                             </asp:RadMenuItem>
                             <asp:RadMenuItem runat="server" IsSeparator="True">
@@ -156,7 +156,7 @@
                             <asp:RadMenuItem runat="server" NavigateUrl="~/ad/single/sealcategory.aspx"
                                 Text="Danh Mục">
                             </asp:RadMenuItem>
-                        </Items>--%>
+                        </Items>
                     </asp:RadMenuItem>
                     <asp:RadMenuItem runat="server" Owner="RadMenu1" PostBack="False" Text="Tin Tức"
                         Font-Bold="True" NavigateUrl="~/ad/single/news.aspx">
@@ -207,7 +207,21 @@
                         </Items>
                     </asp:RadMenuItem>
                     <asp:RadMenuItem runat="server" Owner="RadMenu1" PostBack="False" Text="Thư Viện Ảnh"
-                        Font-Bold="True" NavigateUrl="~/ad/single/photoalbum.aspx">
+                        Font-Bold="True">
+                        <Items>
+                            <asp:RadMenuItem runat="server" NavigateUrl="~/ad/single/photoalbumdesign.aspx" Text="Thiết Kế In Ấn">
+                            </asp:RadMenuItem>
+                            <asp:RadMenuItem runat="server" IsSeparator="True">
+                            </asp:RadMenuItem>
+                            <asp:RadMenuItem runat="server" NavigateUrl="~/ad/single/photoalbumcard.aspx"
+                                Text="Sản Xuất Thẻ Cào">
+                            </asp:RadMenuItem>
+                            <asp:RadMenuItem runat="server" IsSeparator="True">
+                            </asp:RadMenuItem>
+                            <asp:RadMenuItem runat="server" NavigateUrl="~/ad/single/photoalbumseal.aspx"
+                                Text="Seal Niêm Phong">
+                            </asp:RadMenuItem>
+                        </Items>
                     </asp:RadMenuItem>
                 </Items>
             </asp:RadMenu>

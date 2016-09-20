@@ -18,6 +18,7 @@ namespace TLLib
         DBNull dbNULL = DBNull.Value;
 
         public string PhotoAlbumCategoryInsert(
+            string ProductCategoryID,
             string ImageName,
             string PhotoAlbumCategoryName,
             string PhotoAlbumCategoryNameEn,
@@ -33,6 +34,7 @@ namespace TLLib
                 var scon = new SqlConnection(connectionString);
                 var cmd = new SqlCommand("usp_PhotoAlbumCategory_Insert", scon);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ProductCategoryID", string.IsNullOrEmpty(ProductCategoryID) ? dbNULL : (object)ProductCategoryID);
                 cmd.Parameters.AddWithValue("@ImageName", string.IsNullOrEmpty(ImageName) ? dbNULL : (object)ImageName);
                 cmd.Parameters.AddWithValue("@PhotoAlbumCategoryName", string.IsNullOrEmpty(PhotoAlbumCategoryName) ? dbNULL : (object)PhotoAlbumCategoryName);
                 cmd.Parameters.AddWithValue("@PhotoAlbumCategoryNameEn", string.IsNullOrEmpty(PhotoAlbumCategoryNameEn) ? dbNULL : (object)PhotoAlbumCategoryNameEn);
@@ -71,6 +73,7 @@ namespace TLLib
 
         public int PhotoAlbumCategoryUpdate(
             string PhotoAlbumCategoryID,
+            string ProductCategoryID,
             string ImageName,
             string PhotoAlbumCategoryName,
             string PhotoAlbumCategoryNameEn,
@@ -87,6 +90,7 @@ namespace TLLib
                 var cmd = new SqlCommand("usp_PhotoAlbumCategory_Update", scon);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@PhotoAlbumCategoryID", string.IsNullOrEmpty(PhotoAlbumCategoryID) ? dbNULL : (object)PhotoAlbumCategoryID);
+                cmd.Parameters.AddWithValue("@ProductCategoryID", string.IsNullOrEmpty(ProductCategoryID) ? dbNULL : (object)ProductCategoryID);
                 cmd.Parameters.AddWithValue("@ImageName", string.IsNullOrEmpty(ImageName) ? dbNULL : (object)ImageName);
                 cmd.Parameters.AddWithValue("@PhotoAlbumCategoryName", string.IsNullOrEmpty(PhotoAlbumCategoryName) ? dbNULL : (object)PhotoAlbumCategoryName);
                 cmd.Parameters.AddWithValue("@PhotoAlbumCategoryNameEn", string.IsNullOrEmpty(PhotoAlbumCategoryNameEn) ? dbNULL : (object)PhotoAlbumCategoryNameEn);
@@ -188,6 +192,7 @@ namespace TLLib
 
         public DataTable PhotoAlbumCategorySelectAll(
             string PhotoAlbumCategoryName,
+            string ProductCategoryID,
             string IsShowOnMenu,
             string IsShowOnHomePage,
             string IsAvailable,
@@ -202,6 +207,7 @@ namespace TLLib
                 var cmd = new SqlCommand("usp_PhotoAlbumCategory_SelectAll", scon);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@PhotoAlbumCategoryName", string.IsNullOrEmpty(PhotoAlbumCategoryName) ? dbNULL : (object)PhotoAlbumCategoryName);
+                cmd.Parameters.AddWithValue("@ProductCategoryID", string.IsNullOrEmpty(ProductCategoryID) ? dbNULL : (object)ProductCategoryID);
                 cmd.Parameters.AddWithValue("@IsShowOnMenu", string.IsNullOrEmpty(IsShowOnMenu) ? dbNULL : (object)IsShowOnMenu);
                 cmd.Parameters.AddWithValue("@IsShowOnHomePage", string.IsNullOrEmpty(IsShowOnHomePage) ? dbNULL : (object)IsShowOnHomePage);
                 cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);

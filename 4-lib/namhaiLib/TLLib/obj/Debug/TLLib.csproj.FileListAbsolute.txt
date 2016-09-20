@@ -45,3 +45,10 @@ D:\Quang\GoogleDrive\abin2323\1-WebTemplate\1-WebTemplateDB25092014FixV2\Fix-V2.
 D:\Quang\GoogleDrive\abin2323\1-WebTemplate\1-WebTemplateDB25092014FixV2\Fix-V2.0\TLLib V2.0-Fix-V2.0\TLLib\obj\Debug\TLLib.csprojResolveAssemblyReference.cache
 D:\Quang\GoogleDrive\abin2323\1-WebTemplate\1-WebTemplateDB25092014FixV2\Fix-V2.0\TLLib V2.0-Fix-V2.0\TLLib\obj\Debug\TLLib.dll
 D:\Quang\GoogleDrive\abin2323\1-WebTemplate\1-WebTemplateDB25092014FixV2\Fix-V2.0\TLLib V2.0-Fix-V2.0\TLLib\obj\Debug\TLLib.pdb
+E:\Tien\Website\namhai\4-lib\namhaiLib\TLLib\bin\Debug\TLLib.dll
+E:\Tien\Website\namhai\4-lib\namhaiLib\TLLib\bin\Debug\TLLib.pdb
+E:\Tien\Website\namhai\4-lib\namhaiLib\TLLib\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\Tien\Website\namhai\4-lib\namhaiLib\TLLib\bin\Debug\itextsharp.dll
+E:\Tien\Website\namhai\4-lib\namhaiLib\TLLib\obj\Debug\TLLib.csprojResolveAssemblyReference.cache
+E:\Tien\Website\namhai\4-lib\namhaiLib\TLLib\obj\Debug\TLLib.dll
+E:\Tien\Website\namhai\4-lib\namhaiLib\TLLib\obj\Debug\TLLib.pdb

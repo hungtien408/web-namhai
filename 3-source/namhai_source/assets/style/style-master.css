@@ -1411,3 +1411,51 @@ body .mobilep-right {
 #sliderDetails .slick-slider .slick-next:hover {
     background-position: right bottom;
 }
+/*.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
+    color:#333;
+}*/
+.tab-box > img {
+  max-width: 100%;
+}
+.tab-box .address-contact {
+    margin-bottom:0;
+}
+.tab-box .wrap-send {
+    width:70%;
+}
+#menu > li > a {
+    border-right: 1px solid #ddd;
+}
+#menu > li.last > a {
+    border-right: none;
+}
+.ui-widget-header {
+    background:none;
+    border:none;
+}
+    .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+        background:none;
+       border:1px solid transparent;
+    }
+    .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+        background:#bababa;
+    }
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+    border-radius:0;
+}
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+    border-radius:0;
+}
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
+    color:#fff;
+}
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+    border:1px solid transparent;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active{
+    background:#3198e7;
+}
+.ui-widget-content {
+    background:none;
+    border:1px solid transparent;
+}

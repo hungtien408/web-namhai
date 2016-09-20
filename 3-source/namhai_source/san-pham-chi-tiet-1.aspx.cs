@@ -20,26 +20,18 @@ public partial class san_pham_chi_tiet : System.Web.UI.Page
                 var dvBreadcrum = oBreadcrum.ProductCategoryHierarchyToTopSelectAll(Request.QueryString["dci"]).DefaultView;
                 lstBreadcrum.DataSource = dvBreadcrum;
                 lstBreadcrum.DataBind();
-                lstProductSameTK.Visible = true;
-                tabContent.Visible = false;
-                lstGalleryTK.Visible = true;
             }
             else if (!string.IsNullOrEmpty(Request.QueryString["cci"]))
             {
                 var dvBreadcrum = oBreadcrum.ProductCategoryHierarchyToTopSelectAll(Request.QueryString["cci"]).DefaultView;
                 lstBreadcrum.DataSource = dvBreadcrum;
                 lstBreadcrum.DataBind();
-                lstProductSameSX.Visible = true;
-                tabContent.Visible = false;
-                lstGallerySX.Visible = true;
             }
             else 
             {
                 var dvBreadcrum = oBreadcrum.ProductCategoryHierarchyToTopSelectAll(Request.QueryString["sci"]).DefaultView;
                 lstBreadcrum.DataSource = dvBreadcrum;
                 lstBreadcrum.DataBind();
-                lstProductCategorySeal.Visible = true;
-                lstGallerySeal.Visible = true;
             }
 
             string strTitle, strDescription, strMetaTitle, strMetaDescription;
@@ -76,44 +68,5 @@ public partial class san_pham_chi_tiet : System.Web.UI.Page
     protected string progressTitle(object input)
     {
         return Common.ConvertTitle(input.ToString());
-    }
-
-    private void sendEmail()
-    {
-        string msg = "<h3>NAM HẢI: CONTACT</h3><br/>";
-        msg += "<b>Họ và tên: </b>" + txtFullName.Text.Trim().ToString() + "<br />";
-        msg += "<b>Địa chỉ: </b>" + txtAddress.Text.Trim().ToString() + "<br />";
-        msg += "<b>Email: </b>" + txtEmail.Text.Trim().ToString() + "<br />";
-        msg += "<b>Điện thoại: </b>" + txtPhone.Text.Trim().ToString() + "<br />";
-        msg += "<b>Nội dung: </b>" + txtNoiDung.Text.Trim().ToString();
-        Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master", "cc@tranlegroup.com", "", "Contact NAM HẢI", msg, true);
-    }
-    protected void btGui_Click(object sender, EventArgs e)
-    {
-        if (Page.IsValid)
-        {
-            //if (RadCaptcha1.IsValid)
-            //{
-
-                //send email         
-                sendEmail();
-                //lblMessage.Text = "Cám ơn bạn đã liên lạc với chúng tôi. Thông báo của bạn đã được gửi đi. Chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất!";
-                ScriptManager.RegisterClientScriptBlock(Page, Page.GetType(), "runtime", " $(document).ready(function () {alert('Cám ơn bạn đã liên lạc với chúng tôi. Thông báo của bạn đã được gửi đi. Chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất!')});", true);
-                //lblMessage.Visible = true;
-                //lblMessage.Text = "";
-                //
-                //Clear text
-                //
-                txtFullName.Text = "";
-                txtAddress.Text = "";
-                txtPhone.Text = "";
-                txtEmail.Text = "";
-                txtNoiDung.Text = "";
-            //}
-            //else
-            //{
-            //    lblMessage.Text = "Chuỗi xác nhận chưa đúng !";
-            //}
-        }
     }
 }

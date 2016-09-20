@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/site-partner.master" AutoEventWireup="true"
-    CodeFile="san-pham-chi-tiet.aspx.cs" Inherits="san_pham_chi_tiet" %>
+    CodeFile="san-pham-chi-tiet-1.aspx.cs" Inherits="san_pham_chi_tiet" %>
 
-<%@ Register TagPrefix="asp" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit, Version=3.5.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="banner-main">
         <asp:ListView ID="lstBanner" runat="server" DataSourceID="odsBanner" EnableModelValidation="True">
@@ -211,192 +210,102 @@
                         <asp:QueryStringParameter Name="ProductID" QueryStringField="pi" Type="String" />
                     </SelectParameters>
                 </asp:ObjectDataSource>
-                <div class="clr">
-                </div>
-                <div class="tab-content" id="tabContent" runat="server">
+                <div class="clr"></div>
+                <div class="tab-content">
                     <div id="tabs" class="tab-product">
-                        <ul>
-                            <li><a href="#tabs-1">Mô tả</a></li>
-                            <li><a href="#tabs-2">Chứng nhận</a></li>
-                            <li><a href="#tabs-3">Liên hệ</a></li>
-                        </ul>
-                        <div id="tabs-1">
-                            <asp:ListView ID="lstMoTa" runat="server" DataSourceID="odsProductDetails" EnableModelValidation="True">
-                                <ItemTemplate>
-                                    <div class="tab-box">
-                                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("Description") %>'></asp:Label>
-                                    </div>
-                                </ItemTemplate>
-                                <LayoutTemplate>
-                                    <span runat="server" id="itemPlaceholder" />
-                                </LayoutTemplate>
-                            </asp:ListView>
+                      <ul>
+                        <li><a href="#tabs-1">Mô tả</a></li>
+                        <li><a href="#tabs-2">Chứng nhận</a></li>
+                        <li><a href="#tabs-3">Liên hệ</a></li>
+                      </ul>
+                      <div id="tabs-1">
+                        <div class="tab-box">
+                            <p>Material and character</p>
+                            <p>Grade: 30MnSi</p>
+                            <p>Size:  7.1, 9.0, 10.7, 12.6mm（or according to your instruction）</p>
+                            <p>Chemical composition of pc steel bar</p>
                         </div>
-                        <div id="tabs-2">
-                            <asp:ListView ID="lstChungNhan" runat="server" DataSourceID="odsProductDetails" EnableModelValidation="True">
-                                <ItemTemplate>
-                                    <div class="tab-box">
-                                        <asp:Label ID="Label3" runat="server" Text='<%# Eval("DescriptionEn") %>'></asp:Label>
-                                    </div>
-                                </ItemTemplate>
-                                <LayoutTemplate>
-                                    <span runat="server" id="itemPlaceholder" />
-                                </LayoutTemplate>
-                            </asp:ListView>
+                      </div>
+                      <div id="tabs-2">
+                         <div class="tab-box">
+                             <img src="assets/images/details-big-2.jpg" />
                         </div>
-                        <div id="tabs-3">
-                            <div class="tab-box">
-                                <div class="address-contact">
-                                    <h4 class="text-uppercase">
-                                        công ty cổ phần nam hải</h4>
-                                    <p>
-                                        <span class="fa fa-map-marker"></span>12 Bis - Tôn Đản, Phường 13, Quận 4, TP. Hồ
-                                        Chí Minh</p>
-                                    <p>
-                                        <span class="fa fa-phone"></span>(08) 3826 1441 - 3826 1442
-                                    </p>
-                                    <p>
-                                        <span class="fa fa-fax"></span>Fax:(0.8) 3940 4625 - 3941 4609</p>
-                                    <p>
-                                        <span class="fa fa-envelope"></span><a href="mailto:info@tdx.com.vn">info@tdx.com.vn</a></p>
-                                    <p>
-                                        <span class="fa fa-globe"></span>Websie:<a href="http://www.namhaico.com.vn"> www.namhaico.com.vn</a></p>
-                                    <p>
-                                        <span class="fa fa-facebook-square"></span>Facebook:<a href="http://www.facebook.com/namhaicompany">
-                                            www.facebook.com/namhaicompany</a></p>
-                                </div>
-                                <div class="wrap-send">
-                                    <div class="contact-w">
-                                        <div class="contact-input">
-                                            <asp:TextBox ID="txtFullName" CssClass="contact-textbox" runat="server"></asp:TextBox>
-                                            <asp:TextBoxWatermarkExtender ID="txtFullName_WatermarkExtender" runat="server" Enabled="True"
-                                                WatermarkText="Họ &amp; Tên" TargetControlID="txtFullName">
-                                            </asp:TextBoxWatermarkExtender>
-                                            <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator1" runat="server"
-                                                Display="Dynamic" ValidationGroup="SendEmail" ControlToValidate="txtFullName"
-                                                ErrorMessage="Information required!" ForeColor="Red"></asp:RequiredFieldValidator>
-                                        </div>
-                                    </div>
-                                    <div class="contact-w">
-                                        <div class="contact-input">
-                                            <asp:TextBox ID="txtAddress" CssClass="contact-textbox" runat="server"></asp:TextBox>
-                                            <asp:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender1" runat="server" Enabled="True"
-                                                WatermarkText="Địa chỉ" TargetControlID="txtAddress">
-                                            </asp:TextBoxWatermarkExtender>
-                                            <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator2" runat="server"
-                                                Display="Dynamic" ValidationGroup="SendEmail" ControlToValidate="txtAddress"
-                                                ErrorMessage="Information required!" ForeColor="Red"></asp:RequiredFieldValidator>
-                                        </div>
-                                    </div>
-                                    <div class="contact-w">
-                                        <div class="contact-input">
-                                            <asp:TextBox ID="txtEmail" CssClass="contact-textbox" runat="server"></asp:TextBox>
-                                            <asp:TextBoxWatermarkExtender ID="txtEmail_WatermarkExtender" runat="server" Enabled="True"
-                                                WatermarkText="Email" TargetControlID="txtEmail">
-                                            </asp:TextBoxWatermarkExtender>
-                                            <asp:RegularExpressionValidator CssClass="lb-error" ID="RegularExpressionValidator1"
-                                                runat="server" ValidationGroup="SendEmail" ControlToValidate="txtEmail" ErrorMessage="Email is error!"
-                                                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"
-                                                ForeColor="Red"></asp:RegularExpressionValidator>
-                                            <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator3" runat="server"
-                                                ValidationGroup="SendEmail" ControlToValidate="txtEmail" ErrorMessage="Information required!"
-                                                Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
-                                        </div>
-                                    </div>
-                                    <div class="contact-w">
-                                        <div class="contact-input">
-                                            <asp:TextBox ID="txtPhone" CssClass="contact-textbox" runat="server"></asp:TextBox>
-                                            <asp:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender2" runat="server" Enabled="True"
-                                                WatermarkText="Điện thoại" TargetControlID="txtPhone">
-                                            </asp:TextBoxWatermarkExtender>
-                                            <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator5" runat="server"
-                                                Display="Dynamic" ValidationGroup="SendEmail" ControlToValidate="txtPhone" ErrorMessage="Information required!"
-                                                ForeColor="Red"></asp:RequiredFieldValidator>
-                                        </div>
-                                    </div>
-                                    <div class="contact-w">
-                                        <div class="contact-input">
-                                            <asp:TextBox ID="txtNoiDung" CssClass="contact-area" runat="server" TextMode="MultiLine"></asp:TextBox>
-                                            <asp:TextBoxWatermarkExtender ID="txtNoiDung_WatermarkExtender" runat="server" Enabled="True"
-                                                WatermarkText="Nội dung" TargetControlID="txtNoiDung">
-                                            </asp:TextBoxWatermarkExtender>
-                                            <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator4" runat="server"
-                                                ValidationGroup="SendEmail" Display="Dynamic" ControlToValidate="txtNoiDung"
-                                                ErrorMessage="Information required!" ForeColor="Red"></asp:RequiredFieldValidator>
-                                        </div>
-                                    </div>
-                                    <div class="contact-w">
-                                        <div class="contact-btn">
-                                            <asp:Button ID="btGui" CssClass="button-btn" runat="server" Text="Gửi tin nhắn" ValidationGroup="SendEmail"
-                                                OnClick="btGui_Click" />
-                                        </div>
-                                    </div>
-                                </div>
+                      </div>
+                      <div id="tabs-3">
+                         <div class="tab-box">
+                           <div class="address-contact">
+                                <h4 class="text-uppercase">
+                                    công ty cổ phần nam hải</h4>
+                                <p>
+                                    <span class="fa fa-map-marker"></span>12 Bis - Tôn Đản, Phường 13, Quận 4, TP. Hồ
+                                    Chí Minh</p>
+                                <p>
+                                    <span class="fa fa-phone"></span>(08) 3826 1441 - 3826 1442
+                                </p>
+                                <p>
+                                    <span class="fa fa-fax"></span>Fax:(0.8) 3940 4625 - 3941 4609</p>
+                                <p>
+                                    <span class="fa fa-envelope"></span><a href="mailto:info@tdx.com.vn">info@tdx.com.vn</a></p>
+                                <p>
+                                    <span class="fa fa-globe"></span>Websie:<a href="http://www.namhaico.com.vn"> www.namhaico.com.vn</a></p>
+                                <p>
+                                    <span class="fa fa-facebook-square"></span>Facebook:<a href="http://www.facebook.com/namhaicompany">
+                                         www.facebook.com/namhaicompany</a></p>
+                                
                             </div>
-                        </div>
+                              <div class="wrap-send">
+                                  <div class="contact-w">
+                                    <div class="contact-input">
+                                        <asp:TextBox ID="TextBox3" CssClass="contact-textbox" runat="server" placeholder="Họ tên"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="contact-w">
+                                    <div class="contact-input">
+                                        <asp:TextBox ID="txtFullName" CssClass="contact-textbox" runat="server" placeholder="Địa chỉ"></asp:TextBox>
+                                    </div>
+                                </div>
+                                   <div class="contact-w">
+                                    <div class="contact-input">
+                                        <asp:TextBox ID="TextBox1" CssClass="contact-textbox" runat="server" placeholder="Email"></asp:TextBox>
+                                    </div>
+                                </div>
+                                 <div class="contact-w">
+                                    <div class="contact-input">
+                                        <asp:TextBox ID="TextBox2" CssClass="contact-textbox" runat="server" placeholder="Số điện thoại"></asp:TextBox>
+                                    </div>
+                                </div>
+                                 <div class="contact-w">
+                                    <div class="contact-input">
+                                        <asp:TextBox ID="TextBox4" CssClass="contact-area" runat="server" TextMode="MultiLine" placeholder="Nội dung"></asp:TextBox>
+                                    </div>
+                                </div> 
+                                   <div class="contact-w">
+                                        <div class="contact-btn">
+                                            <asp:button ID="Button1" CssClass="button-btn" runat="server" text="Gửi tin nhắn" />
+                                        </div>
+                                    </div> 
+                            </div>
+                      </div>
                     </div>
                 </div>
             </div>
+           </div>
             <div class="colAside">
                 <div class="aside-box">
                     <h3>
                         sản phẩm &amp dịch vụ</h3>
                 </div>
                 <div class="panel-group" id="accordion">
-                    <asp:ListView ID="lstProductSameTK" runat="server" DataSourceID="odsProductSame"
-                        EnableModelValidation="True" Visible="False">
-                        <ItemTemplate>
-                            <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id='<%# "heading" + Eval("ProductID") %>'>
-                                    <h4 class="panel-title">
-                                        <a href='<%# progressTitle(Eval("ProductName")) + "-dci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
-                                            <%# Eval("ProductName") %><span class="icon-plus"></span> </a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </ItemTemplate>
-                        <LayoutTemplate>
-                            <span runat="server" id="itemPlaceholder" />
-                        </LayoutTemplate>
-                    </asp:ListView>
-                    <asp:ListView ID="lstProductSameSX" runat="server" DataSourceID="odsProductSame"
-                        EnableModelValidation="True" Visible="False">
-                        <ItemTemplate>
-                            <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id='<%# "heading" + Eval("ProductID") %>'>
-                                    <h4 class="panel-title">
-                                        <a href='<%# progressTitle(Eval("ProductName")) + "-cci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
-                                            <%# Eval("ProductName") %><span class="icon-plus"></span> </a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </ItemTemplate>
-                        <LayoutTemplate>
-                            <span runat="server" id="itemPlaceholder" />
-                        </LayoutTemplate>
-                    </asp:ListView>
-                    <asp:ObjectDataSource ID="odsProductSame" runat="server" SelectMethod="ProductSameSelectAll"
-                        TypeName="TLLib.Product">
-                        <SelectParameters>
-                            <asp:Parameter DefaultValue="10" Name="RerultCount" Type="String" />
-                            <asp:QueryStringParameter DefaultValue="" Name="ProductID" QueryStringField="pi"
-                                Type="String" />
-                        </SelectParameters>
-                    </asp:ObjectDataSource>
-                    <asp:ListView ID="lstProductCategorySeal" runat="server" DataSourceID="odsProductCategorySeal"
-                        EnableModelValidation="True" Visible="False">
-                        <ItemTemplate>
-                            <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id='<%# "heading" + Eval("ProductCategoryID") %>'>
-                                    <h4 class="panel-title">
-                                        <%--<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <%--<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                     href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Thiết kế in
                                     ấn<span class="icon-plus"></span> </a>--%>
-                                        <a href='<%# progressTitle(Eval("ProductCategoryName")) + "-sci-" + Eval("ProductCategoryID") + ".aspx" %>'>
-                                            <%# Eval("ProductCategoryName")%><span class="icon-plus"></span> </a>
-                                    </h4>
-                                </div>
-                                <%--<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <a href="thiet-ke-in-an.aspx">Thiết kế in ấn<span class="icon-plus"></span> </a>
+                            </h4>
+                        </div>
+                        <%--<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                             <div class="panel-body">
                                 <div class="rec-content">
                                     <asp:ListView ID="lstDesignCategory" runat="server" DataSourceID="odsDesignCategory"
@@ -423,28 +332,89 @@
                                 </div>
                             </div>
                         </div>--%>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <%--<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Sản xuất thẻ
+                                    cào<span class="icon-plus"></span> </a>--%>
+                                <a href="san-xuat-the-cao.aspx">Sản xuất thẻ cào<span class="icon-plus"></span>
+                                </a>
+                            </h4>
+                        </div>
+                        <%--<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <div class="rec-content">
+                                    <asp:ListView ID="lstCardCategory" runat="server" DataSourceID="odsCardCategory"
+                                        EnableModelValidation="True">
+                                        <ItemTemplate>
+                                            <li><a href='<%# progressTitle(Eval("ProductCategoryName")) + "-cci-" + Eval("ProductCategoryID") + ".aspx" %>'>
+                                                <%# Eval("ProductCategoryName")%></a></li>
+                                        </ItemTemplate>
+                                        <LayoutTemplate>
+                                            <ul>
+                                                <li runat="server" id="itemPlaceholder"></li>
+                                            </ul>
+                                        </LayoutTemplate>
+                                    </asp:ListView>
+                                    <asp:ObjectDataSource ID="odsCardCategory" runat="server" SelectMethod="ProductCategorySelectAll"
+                                        TypeName="TLLib.ProductCategory">
+                                        <SelectParameters>
+                                            <asp:Parameter DefaultValue="2" Name="parentID" Type="Int32" />
+                                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
+                                            <asp:Parameter Name="IsShowOnMenu" Type="String" />
+                                            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                                        </SelectParameters>
+                                    </asp:ObjectDataSource>
+                                </div>
                             </div>
-                        </ItemTemplate>
-                        <LayoutTemplate>
-                            <span runat="server" id="itemPlaceholder" />
-                        </LayoutTemplate>
-                    </asp:ListView>
-                    <asp:ObjectDataSource ID="odsProductCategorySeal" runat="server" SelectMethod="ProductCategorySelectAll"
-                        TypeName="TLLib.ProductCategory">
-                        <SelectParameters>
-                            <asp:Parameter DefaultValue="3" Name="parentID" Type="Int32" />
-                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
-                            <asp:Parameter Name="IsShowOnMenu" Type="String" />
-                            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
-                        </SelectParameters>
-                    </asp:ObjectDataSource>
+                        </div>--%>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <%--<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Seal niêm
+                                    phong<span class="icon-plus"></span> </a>--%>
+                                <a href="seal-niem-phong.aspx">Seal niêm phong<span class="icon-plus"></span> </a>
+                            </h4>
+                        </div>
+                        <%--<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                <div class="rec-content">
+                                    <asp:ListView ID="lstSealCateogry" runat="server" DataSourceID="odsSealCateogry"
+                                        EnableModelValidation="True">
+                                        <ItemTemplate>
+                                            <li><a href='<%# progressTitle(Eval("ProductCategoryName")) + "-sci-" + Eval("ProductCategoryID") + ".aspx" %>'>
+                                                <%# Eval("ProductCategoryName")%></a></li>
+                                        </ItemTemplate>
+                                        <LayoutTemplate>
+                                            <ul>
+                                                <li runat="server" id="itemPlaceholder"></li>
+                                            </ul>
+                                        </LayoutTemplate>
+                                    </asp:ListView>
+                                    <asp:ObjectDataSource ID="odsSealCateogry" runat="server" SelectMethod="ProductCategorySelectAll"
+                                        TypeName="TLLib.ProductCategory">
+                                        <SelectParameters>
+                                            <asp:Parameter DefaultValue="3" Name="parentID" Type="Int32" />
+                                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
+                                            <asp:Parameter Name="IsShowOnMenu" Type="String" />
+                                            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                                        </SelectParameters>
+                                    </asp:ObjectDataSource>
+                                </div>
+                            </div>
+                        </div>--%>
+                    </div>
                 </div>
                 <div class="aside-box">
                     <h3>
                         Thư viện ảnh</h3>
                 </div>
                 <div class="list-gallery gallery-icon">
-                    <asp:ListView ID="lstGalleryTK" runat="server" DataSourceID="odsGalleryTK" EnableModelValidation="True" Visible="False">
+                    <asp:ListView ID="lstGallery" runat="server" DataSourceID="odsGallery" EnableModelValidation="True">
                         <ItemTemplate>
                             <div class="gallery-img">
                                 <a href="javascript:void(0);">
@@ -457,11 +427,10 @@
                             <span runat="server" id="itemPlaceholder" />
                         </LayoutTemplate>
                     </asp:ListView>
-                    <asp:ObjectDataSource ID="odsGalleryTK" runat="server" SelectMethod="PhotoAlbumCategorySelectAll"
+                    <asp:ObjectDataSource ID="odsGallery" runat="server" SelectMethod="PhotoAlbumCategorySelectAll"
                         TypeName="TLLib.PhotoAlbumCategory">
                         <SelectParameters>
                             <asp:Parameter Name="PhotoAlbumCategoryName" Type="String" />
-                            <asp:Parameter DefaultValue="1" Name="ProductCategoryID" Type="String" />
                             <asp:Parameter Name="IsShowOnMenu" Type="String" />
                             <asp:Parameter Name="IsShowOnHomePage" Type="String" />
                             <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
@@ -469,63 +438,7 @@
                             <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
                         </SelectParameters>
                     </asp:ObjectDataSource>
-                    <asp:ListView ID="lstGallerySX" runat="server" DataSourceID="odsGallerySX" EnableModelValidation="True" Visible="False">
-                        <ItemTemplate>
-                            <div class="gallery-img">
-                                <a href="javascript:void(0);">
-                                    <img id="Img4" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/photoalbumcategory/thumbs/" + Eval("ImageName") : "~/assets/images/gallery1.jpg" %>'
-                                        runat="server" /></a> <a id="A2" href='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/photoalbumcategory/" + Eval("ImageName") : "~/assets/images/gallery1.jpg" %>'
-                                            class="fancybox zoom-details" data-fancybox-group="gallery" runat="server"><span>zoom</span></a>
-                            </div>
-                        </ItemTemplate>
-                        <LayoutTemplate>
-                            <span runat="server" id="itemPlaceholder" />
-                        </LayoutTemplate>
-                    </asp:ListView>
-                    <asp:ObjectDataSource ID="odsGallerySX" runat="server" SelectMethod="PhotoAlbumCategorySelectAll"
-                        TypeName="TLLib.PhotoAlbumCategory">
-                        <SelectParameters>
-                            <asp:Parameter Name="PhotoAlbumCategoryName" Type="String" />
-                            <asp:Parameter DefaultValue="2" Name="ProductCategoryID" Type="String" />
-                            <asp:Parameter Name="IsShowOnMenu" Type="String" />
-                            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
-                            <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
-                            <asp:Parameter Name="Priority" Type="String" />
-                            <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
-                        </SelectParameters>
-                    </asp:ObjectDataSource>
-                    <asp:ListView ID="lstGallerySeal" runat="server" DataSourceID="odsGallerySeal" EnableModelValidation="True" Visible="False">
-                        <ItemTemplate>
-                            <div class="gallery-img">
-                                <a href="javascript:void(0);">
-                                    <img id="Img4" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/photoalbumcategory/thumbs/" + Eval("ImageName") : "~/assets/images/gallery1.jpg" %>'
-                                        runat="server" /></a> <a id="A2" href='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/photoalbumcategory/" + Eval("ImageName") : "~/assets/images/gallery1.jpg" %>'
-                                            class="fancybox zoom-details" data-fancybox-group="gallery" runat="server"><span>zoom</span></a>
-                            </div>
-                        </ItemTemplate>
-                        <LayoutTemplate>
-                            <span runat="server" id="itemPlaceholder" />
-                        </LayoutTemplate>
-                    </asp:ListView>
-                    <asp:ObjectDataSource ID="odsGallerySeal" runat="server" SelectMethod="PhotoAlbumCategorySelectAll"
-                        TypeName="TLLib.PhotoAlbumCategory">
-                        <SelectParameters>
-                            <asp:Parameter Name="PhotoAlbumCategoryName" Type="String" />
-                            <asp:Parameter DefaultValue="3" Name="ProductCategoryID" Type="String" />
-                            <asp:Parameter Name="IsShowOnMenu" Type="String" />
-                            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
-                            <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
-                            <asp:Parameter Name="Priority" Type="String" />
-                            <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
-                        </SelectParameters>
-                    </asp:ObjectDataSource>
-                    <asp:DataPager ID="DataPager1" runat="server" PageSize="8" PagedControlID="lstGalleryTK"
-                        Visible="False">
-                    </asp:DataPager>
-                    <asp:DataPager ID="DataPager2" runat="server" PageSize="8" PagedControlID="lstGallerySX"
-                        Visible="False">
-                    </asp:DataPager>
-                    <asp:DataPager ID="DataPager3" runat="server" PageSize="8" PagedControlID="lstGallerySeal"
+                    <asp:DataPager ID="DataPager1" runat="server" PageSize="8" PagedControlID="lstGallery"
                         Visible="False">
                     </asp:DataPager>
                 </div>

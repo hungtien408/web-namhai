@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ad/template/adminEn.master" AutoEventWireup="true"
-    CodeFile="photoalbum.aspx.cs" Inherits="ad_single_photoalbum" %>
+    CodeFile="photoalbumcard.aspx.cs" Inherits="ad_single_photoalbum" %>
 
 <%@ Register TagPrefix="asp" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="Server">
@@ -282,7 +282,7 @@
                                                             </asp:RadTextBox>
                                                         </td>
                                                     </tr>
-                                                    <tr>
+                                                    <tr class="invisible">
                                                         <td class="left">
                                                             Danh mục sản phẩm
                                                         </td>
@@ -559,7 +559,7 @@
         <SelectParameters>
             <asp:ControlParameter ControlID="txtSearchPhotoAlbumCategoryName" Name="PhotoAlbumCategoryName"
                 PropertyName="Text" Type="String" />
-            <asp:Parameter Name="ProductCategoryID" Type="String" />
+            <asp:Parameter DefaultValue="2" Name="ProductCategoryID" Type="String" />
             <asp:Parameter Name="IsShowOnMenu" Type="String" />
             <asp:Parameter Name="IsShowOnHomePage" Type="String" />
             <asp:Parameter Name="IsAvailable" Type="String" />

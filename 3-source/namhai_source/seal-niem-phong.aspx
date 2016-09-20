@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="container">
-            <%--<div class="list-product">
+            <div class="list-product">
                 <a class="active" href="seal-niem-phong.aspx">Tất cả</a>
                 <asp:ListView ID="lstSealCategory" runat="server" DataSourceID="odsSealCategory"
                     EnableModelValidation="True">
@@ -62,7 +62,7 @@
                         <asp:Parameter Name="IsShowOnHomePage" Type="String" />
                     </SelectParameters>
                 </asp:ObjectDataSource>
-            </div>--%>
+            </div>
             <div class="row product-tb">
                 <asp:ListView ID="lstSeal" runat="server" DataSourceID="odsSeal" EnableModelValidation="True">
                     <ItemTemplate>

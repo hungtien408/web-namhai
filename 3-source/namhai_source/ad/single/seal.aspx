@@ -589,7 +589,7 @@
                                                                 Checked='<%# (Container is GridEditFormInsertItem) ? true : (string.IsNullOrEmpty(Eval("IsAvailable").ToString()) ? false : Eval("IsAvailable")) %>' />
                                                         </td>
                                                     </tr>
-                                                    <tr class="invisible">
+                                                    <tr>
                                                         <td class="left">
                                                             Danh mục
                                                         </td>
@@ -720,12 +720,12 @@
                                             Display="Dynamic" ErrorMessage="Nhập tên sản phẩm" SetFocusOnError="true">*</asp:RequiredFieldValidator>--%>
                                                         </td>
                                                     </tr>
-                                                    <tr class="invisible">
+                                                    <tr>
                                                         <td class="left" valign="top">
                                                             Mô tả
                                                         </td>
                                                         <td>
-                                                            <asp:RadEditor ID="txtDescription" StripFormattingOptions="MSWordRemoveAll,ConvertWordLists,MSWordNoFonts,Font,Css,Span" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Height="200" Language="vi-VN" Skin="Office2007"
+                                                            <%--<asp:RadEditor ID="txtDescription" StripFormattingOptions="MSWordRemoveAll,ConvertWordLists,MSWordNoFonts,Font,Css,Span" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Height="200" Language="vi-VN" Skin="Office2007"
                                                                 Width="503px" Content='<%# Bind("Description") %>'>
                                                                 <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/" MaxUploadFileSize="1024000" />
                                                                 <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
@@ -745,6 +745,15 @@
                                                                         <asp:EditorTool Name="ForeColor" />
                                                                     </asp:EditorToolGroup>
                                                                 </Tools>
+                                                            </asp:RadEditor>--%>
+                                                            <asp:RadEditor ID="txtDescription" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Language="vi-VN" Skin="Office2007"
+                                                                Width="503px" Content='<%# Bind("Description") %>'>
+                                                                <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/" MaxUploadFileSize="1024000" />
+                                                                <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
+                                                                <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/" MaxUploadFileSize="1024000" />
+                                                                <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
+                                                                <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
+                                                                    ViewPaths="~/Uploads/Template/" />
                                                             </asp:RadEditor>
                                                         </td>
                                                     </tr>
@@ -755,6 +764,22 @@
                                                         <td>
                                                             <asp:RadEditor ID="txtContent" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Language="vi-VN" Skin="Office2007"
                                                                 Width="503px" Content='<%# Bind("Content") %>'>
+                                                                <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/" MaxUploadFileSize="1024000" />
+                                                                <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
+                                                                <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/" MaxUploadFileSize="1024000" />
+                                                                <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
+                                                                <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
+                                                                    ViewPaths="~/Uploads/Template/" />
+                                                            </asp:RadEditor>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="left" valign="top">
+                                                            Chứng nhận
+                                                        </td>
+                                                        <td>
+                                                            <asp:RadEditor ID="txtDescriptionEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Language="vi-VN" Skin="Office2007"
+                                                                Width="503px" Content='<%# Bind("DescriptionEn") %>'>
                                                                 <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/" MaxUploadFileSize="1024000" />
                                                                 <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
                                                                 <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/" MaxUploadFileSize="1024000" />
@@ -814,34 +839,6 @@
                                                             <%--<asp:RadTextBox runat="server" Width="500px" ID="RadTextBox1" Text='<%# Bind("ProductName") %>' />
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtProductName"
                                             Display="Dynamic" ErrorMessage="Nhập tên sản phẩm" SetFocusOnError="true">*</asp:RequiredFieldValidator>--%>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="left" valign="top">
-                                                            Mô tả
-                                                        </td>
-                                                        <td>
-                                                            <asp:RadEditor ID="txtDescriptionEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Height="200" Language="vi-VN"
-                                                                Skin="Office2007" Width="503px" Content='<%# Bind("DescriptionEn") %>'>
-                                                                <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/" MaxUploadFileSize="1024000" />
-                                                                <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
-                                                                <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/" MaxUploadFileSize="1024000" />
-                                                                <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
-                                                                <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
-                                                                    ViewPaths="~/Uploads/Template/" />
-                                                                <Tools>
-                                                                    <asp:EditorToolGroup>
-                                                                        <asp:EditorTool Name="Copy" />
-                                                                        <asp:EditorTool Name="Cut" />
-                                                                        <asp:EditorTool Name="Paste" />
-                                                                        <asp:EditorTool Name="Bold" />
-                                                                        <asp:EditorTool Name="Italic" />
-                                                                        <asp:EditorTool Name="Underline" />
-                                                                        <asp:EditorTool Name="InsertLink" />
-                                                                        <asp:EditorTool Name="ForeColor" />
-                                                                    </asp:EditorToolGroup>
-                                                                </Tools>
-                                                            </asp:RadEditor>
                                                         </td>
                                                     </tr>
                                                     <tr>

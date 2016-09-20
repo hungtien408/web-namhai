@@ -16,6 +16,7 @@
     <link href="assets/style/slick.css" rel="stylesheet" />
     <link href="assets/style/cloud-zoom.css" rel="stylesheet" />
     <link href="assets/style/animate.css" rel="stylesheet" />
+    <link href="assets/style/jquery-ui.css" rel="stylesheet" />
     <link href="assets/style/style-master.css" rel="stylesheet" />
     <link href="assets/style/site-repond.css" rel="stylesheet" />
     <link href="assets/style/jquery.fancybox.css" rel="stylesheet" />
@@ -144,6 +145,7 @@ type = "text/javascript"; e.parentNode.insertBefore($, e)
         <script src="assets/js/jquery.bgbox.js"></script>
         <script src="assets/js/jquery.textheight.js"></script>
         <script src="assets/js/cloud-zoom.js"></script>
+        <script src="assets/js/jquery-ui.js"></script>
         <script src="assets/js/slick.min.js"></script>
         <script src="assets/js/jquery.fancybox.pack.js"></script>
         <script type="text/javascript">
@@ -190,7 +192,9 @@ type = "text/javascript"; e.parentNode.insertBefore($, e)
                         }
                     });
                 });
-
+                $(function () {
+                    $("#tabs").tabs();
+                });
                 if ($('#silderPartner').size() == 1)
                     var silderPartner = $('#silderPartner').imagesLoaded(function () {
                         silderPartner.slick({
