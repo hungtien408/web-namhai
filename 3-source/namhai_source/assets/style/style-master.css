@@ -1182,6 +1182,9 @@ body .mobilep-right {
     color:#fff;
     padding:10px 0;
 }
+.table-despro > tbody > tr:first-child {
+    background-color:#3198e7 !important;
+}
 .table-striped > tbody > tr:nth-of-type(2n+1) {
     background-color:#fff;
 }
