@@ -92,7 +92,7 @@
                         <asp:Parameter Name="Description" Type="String" />
                         <asp:Parameter Name="PriceFrom" Type="String" />
                         <asp:Parameter Name="PriceTo" Type="String" />
-                        <asp:QueryStringParameter DefaultValue="3" Name="CategoryID" QueryStringField="dci" 
+                        <asp:QueryStringParameter DefaultValue="3" Name="CategoryID" QueryStringField="sci" 
                             Type="String" />
                         <asp:Parameter Name="ManufacturerID" Type="String" />
                         <asp:Parameter Name="OriginID" Type="String" />

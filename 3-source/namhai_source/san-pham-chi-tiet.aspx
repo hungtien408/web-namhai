@@ -3,6 +3,7 @@
 
 <%@ Register TagPrefix="asp" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit, Version=3.5.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <asp:HiddenField ID="hdnAdCategoryID" runat="server" />
     <div class="banner-main">
         <asp:ListView ID="lstBanner" runat="server" DataSourceID="odsBanner" EnableModelValidation="True">
             <ItemTemplate>
@@ -18,7 +19,8 @@
             <SelectParameters>
                 <asp:Parameter DefaultValue="1" Name="StartRowIndex" Type="String" />
                 <asp:Parameter DefaultValue="1" Name="EndRowIndex" Type="String" />
-                <asp:Parameter DefaultValue="7" Name="AdsCategoryID" Type="String" />
+                <asp:ControlParameter ControlID="hdnAdCategoryID" Name="AdsCategoryID" PropertyName="Value"
+                    Type="String" />
                 <asp:Parameter Name="CompanyName" Type="String" />
                 <asp:Parameter Name="Website" Type="String" />
                 <asp:Parameter Name="FromDate" Type="String" />
@@ -30,9 +32,10 @@
         </asp:ObjectDataSource>
         <div class="text-banner">
             <p>
-                <strong>THIẾT KẾ IN ẤN</strong></p>
+                <strong>
+                    <asp:Label ID="lblBanner1" runat="server" Text=""></asp:Label></strong></p>
             <p>
-                NHỮNG SẢN PHẨM IN ẤN CỦA NAM HẢI</p>
+                <asp:Label ID="lblBanner2" runat="server" Text=""></asp:Label></p>
         </div>
     </div>
     <div class="container-bg">
@@ -444,7 +447,8 @@
                         Thư viện ảnh</h3>
                 </div>
                 <div class="list-gallery gallery-icon">
-                    <asp:ListView ID="lstGalleryTK" runat="server" DataSourceID="odsGalleryTK" EnableModelValidation="True" Visible="False">
+                    <asp:ListView ID="lstGalleryTK" runat="server" DataSourceID="odsGalleryTK" EnableModelValidation="True"
+                        Visible="False">
                         <ItemTemplate>
                             <div class="gallery-img">
                                 <a href="javascript:void(0);">
@@ -469,7 +473,8 @@
                             <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
                         </SelectParameters>
                     </asp:ObjectDataSource>
-                    <asp:ListView ID="lstGallerySX" runat="server" DataSourceID="odsGallerySX" EnableModelValidation="True" Visible="False">
+                    <asp:ListView ID="lstGallerySX" runat="server" DataSourceID="odsGallerySX" EnableModelValidation="True"
+                        Visible="False">
                         <ItemTemplate>
                             <div class="gallery-img">
                                 <a href="javascript:void(0);">
@@ -494,7 +499,8 @@
                             <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
                         </SelectParameters>
                     </asp:ObjectDataSource>
-                    <asp:ListView ID="lstGallerySeal" runat="server" DataSourceID="odsGallerySeal" EnableModelValidation="True" Visible="False">
+                    <asp:ListView ID="lstGallerySeal" runat="server" DataSourceID="odsGallerySeal" EnableModelValidation="True"
+                        Visible="False">
                         <ItemTemplate>
                             <div class="gallery-img">
                                 <a href="javascript:void(0);">

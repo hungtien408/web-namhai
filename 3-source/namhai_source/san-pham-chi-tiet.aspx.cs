@@ -23,6 +23,9 @@ public partial class san_pham_chi_tiet : System.Web.UI.Page
                 lstProductSameTK.Visible = true;
                 tabContent.Visible = false;
                 lstGalleryTK.Visible = true;
+                hdnAdCategoryID.Value = "7";
+                lblBanner1.Text = "THIẾT KẾ IN ẤN";
+                lblBanner2.Text = "NHỮNG SẢN PHẨM IN ẤN CỦA NAM HẢI";
             }
             else if (!string.IsNullOrEmpty(Request.QueryString["cci"]))
             {
@@ -32,6 +35,9 @@ public partial class san_pham_chi_tiet : System.Web.UI.Page
                 lstProductSameSX.Visible = true;
                 tabContent.Visible = false;
                 lstGallerySX.Visible = true;
+                hdnAdCategoryID.Value = "8";
+                lblBanner1.Text = "SẢN XUẤT THẺ CÀO";
+                lblBanner2.Text = "NHỮNG SẢN PHẨM THẺ CÀO CỦA NAM HẢI";
             }
             else 
             {
@@ -40,6 +46,9 @@ public partial class san_pham_chi_tiet : System.Web.UI.Page
                 lstBreadcrum.DataBind();
                 lstProductCategorySeal.Visible = true;
                 lstGallerySeal.Visible = true;
+                hdnAdCategoryID.Value = "9";
+                lblBanner1.Text = "SEAL NIÊM PHONG";
+                lblBanner2.Text = "NHỮNG SẢN PHẨM SEAL NIÊM PHONG CỦA NAM HẢI";
             }
 
             string strTitle, strDescription, strMetaTitle, strMetaDescription;
