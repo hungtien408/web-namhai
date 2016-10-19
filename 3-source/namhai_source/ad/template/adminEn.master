@@ -147,8 +147,8 @@
                         </Items>--%>
                     </asp:RadMenuItem>
                     <asp:RadMenuItem runat="server" Owner="RadMenu1" PostBack="False" Text="Seal Niêm Phong"
-                        Font-Bold="True">
-                        <Items>
+                        Font-Bold="True" NavigateUrl="~/ad/single/seal.aspx">
+                        <%--<Items>
                             <asp:RadMenuItem runat="server" NavigateUrl="~/ad/single/seal.aspx" Text="Bài Viết">
                             </asp:RadMenuItem>
                             <asp:RadMenuItem runat="server" IsSeparator="True">
@@ -156,7 +156,7 @@
                             <asp:RadMenuItem runat="server" NavigateUrl="~/ad/single/sealcategory.aspx"
                                 Text="Danh Mục">
                             </asp:RadMenuItem>
-                        </Items>
+                        </Items>--%>
                     </asp:RadMenuItem>
                     <asp:RadMenuItem runat="server" Owner="RadMenu1" PostBack="False" Text="Tin Tức"
                         Font-Bold="True" NavigateUrl="~/ad/single/news.aspx">

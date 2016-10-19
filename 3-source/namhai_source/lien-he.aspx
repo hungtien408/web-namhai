@@ -57,7 +57,7 @@
                         <p>
                             <span class="fa fa-fax"></span>Fax:(0.8) 3940 4625 - 3941 4609</p>
                         <p>
-                            <span class="fa fa-envelope"></span><a href="mailto:info@tdx.com.vn">info@tdx.com.vn</a></p>
+                            <span class="fa fa-envelope"></span><a href="mailto:namhaico@hcm.vnn.vn">namhaico@hcm.vnn.vn</a></p>
                         <p>
                             <span class="fa fa-globe"></span>Websie:<a href="http://www.namhaico.com.vn"> www.namhaico.com.vn</a></p>
                         <p>
