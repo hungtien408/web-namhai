@@ -59,7 +59,7 @@
                         <p>
                             <span class="fa fa-envelope"></span><a href="mailto:namhaico@hcm.vnn.vn">namhaico@hcm.vnn.vn</a></p>
                         <p>
-                            <span class="fa fa-globe"></span>Websie:<a href="http://www.namhaico.com.vn"> www.namhaico.com.vn</a></p>
+                            <span class="fa fa-globe"></span>Websie:<a href="http://www.namhaico.com.vn"> www.namhaico.com.vn</a> - <a target="_blank" href="http://www.namhaico.vn"> www.namhaico.vn </a></p>
                         <p>
                             <span class="fa fa-facebook-square"></span>Facebook:<a href="http://www.facebook.com/namhaicompany">
                                  www.facebook.com/namhaicompany</a></p>
