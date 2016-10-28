@@ -225,8 +225,8 @@ public partial class ad_single_photoalbum : System.Web.UI.Page
             var FileImageName = (RadUpload)row.FindControl("FileImageName");
             var ddlProductCategory = (RadComboBox)row.FindControl("ddlCategory");
             var dv = (DataView)ObjectDataSource1.Select();
-            if (!string.IsNullOrEmpty(dv[0]["ProductCategoryID"].ToString()))
-                ddlProductCategory.SelectedValue = dv[0]["ProductCategoryID"].ToString();
+            //if (!string.IsNullOrEmpty(dv[0]["ProductCategoryID"].ToString()))
+            //    ddlProductCategory.SelectedValue = dv[0]["ProductCategoryID"].ToString();
 
             RadAjaxPanel1.ResponseScripts.Add(string.Format("window['UploadId'] = '{0}';", FileImageName.ClientID));
         }
