@@ -18,11 +18,11 @@ public partial class san_pham_chi_tiet : System.Web.UI.Page
             if (!string.IsNullOrEmpty(Request.QueryString["dci"]))
             {
                 var dvBreadcrum = oBreadcrum.ProductCategoryHierarchyToTopSelectAll(Request.QueryString["dci"]).DefaultView;
-                lstBreadcrum.DataSource = dvBreadcrum;
-                lstBreadcrum.DataBind();
+                //lstBreadcrum.DataSource = dvBreadcrum;
+                //lstBreadcrum.DataBind();
                 lstProductSameTK.Visible = true;
                 tabContent.Visible = false;
-                lstGalleryTK.Visible = true;
+                //lstGalleryTK.Visible = true;
                 hdnAdCategoryID.Value = "7";
                 lblBanner1.Text = "THIẾT KẾ IN ẤN";
                 lblBanner2.Text = "NHỮNG SẢN PHẨM IN ẤN CỦA NAM HẢI";
@@ -30,11 +30,11 @@ public partial class san_pham_chi_tiet : System.Web.UI.Page
             else if (!string.IsNullOrEmpty(Request.QueryString["cci"]))
             {
                 var dvBreadcrum = oBreadcrum.ProductCategoryHierarchyToTopSelectAll(Request.QueryString["cci"]).DefaultView;
-                lstBreadcrum.DataSource = dvBreadcrum;
-                lstBreadcrum.DataBind();
+                //lstBreadcrum.DataSource = dvBreadcrum;
+                //lstBreadcrum.DataBind();
                 lstProductSameSX.Visible = true;
                 tabContent.Visible = false;
-                lstGallerySX.Visible = true;
+                //lstGallerySX.Visible = true;
                 hdnAdCategoryID.Value = "8";
                 lblBanner1.Text = "SẢN XUẤT THẺ CÀO";
                 lblBanner2.Text = "NHỮNG SẢN PHẨM THẺ CÀO CỦA NAM HẢI";
@@ -42,10 +42,11 @@ public partial class san_pham_chi_tiet : System.Web.UI.Page
             else 
             {
                 var dvBreadcrum = oBreadcrum.ProductCategoryHierarchyToTopSelectAll(Request.QueryString["sci"]).DefaultView;
-                lstBreadcrum.DataSource = dvBreadcrum;
-                lstBreadcrum.DataBind();
-                lstProductCategorySeal.Visible = true;
-                lstGallerySeal.Visible = true;
+                //lstBreadcrum.DataSource = dvBreadcrum;
+                //lstBreadcrum.DataBind();
+                //lstProductCategorySeal.Visible = true;
+                lstProductSameSeal.Visible = true;
+                //lstGallerySeal.Visible = true;
                 hdnAdCategoryID.Value = "9";
                 lblBanner1.Text = "SEAL NIÊM PHONG";
                 lblBanner2.Text = "NHỮNG SẢN PHẨM SEAL NIÊM PHONG CỦA NAM HẢI";

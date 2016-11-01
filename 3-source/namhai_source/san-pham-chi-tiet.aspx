@@ -41,9 +41,9 @@
     <div class="container-bg">
         <div id="site" class="corner">
             <div class="container">
-                <%--<a id="A1" href="~/" runat="server"><span>Trang chủ</span></a>/<a href="thiet-ke-in-an.aspx">Thiết
-                    kế in ấn</a>/<span><asp:Label ID="lblTitle" runat="server" Text=""></asp:Label></span>--%>
-                <asp:ListView ID="lstBreadcrum" runat="server" EnableModelValidation="True">
+                <a id="A1" href="~/" runat="server"><span>Trang chủ</span></a>/<a href="seal-niem-phong.aspx">Seal
+                    niêm phong</a>/<span><asp:Label ID="lblTitle" runat="server" Text=""></asp:Label></span>
+                <%--<asp:ListView ID="lstBreadcrum" runat="server" EnableModelValidation="True">
                     <ItemTemplate>
                         <%# "<a href='" + progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" + "'>" + Eval("ProductCategoryName") + "</a> / "%>
                     </ItemTemplate>
@@ -51,7 +51,7 @@
                         <a id="A1" href="~/" runat="server">Trang chủ</a> / <span runat="server" id="itemPlaceholder" />
                     </LayoutTemplate>
                 </asp:ListView>
-                <asp:Label ID="lblTitle" runat="server" Text=""></asp:Label>
+                <asp:Label ID="lblTitle" runat="server" Text=""></asp:Label>--%>
             </div>
         </div>
         <div class="container">
@@ -378,6 +378,22 @@
                             <span runat="server" id="itemPlaceholder" />
                         </LayoutTemplate>
                     </asp:ListView>
+                    <asp:ListView ID="lstProductSameSeal" runat="server" DataSourceID="odsSeal" EnableModelValidation="True"
+                        Visible="False">
+                        <ItemTemplate>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id='<%# "heading" + Eval("ProductID") %>'>
+                                    <h4 class="panel-title">
+                                        <a href='<%# progressTitle(Eval("ProductName")) + "-sci-" + Eval("CategoryID") + "-pi-" + Eval("ProductID") + ".aspx" %>'>
+                                            <%# Eval("ProductName") %><span class="icon-plus"></span> </a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </ItemTemplate>
+                        <LayoutTemplate>
+                            <span runat="server" id="itemPlaceholder" />
+                        </LayoutTemplate>
+                    </asp:ListView>
                     <asp:ObjectDataSource ID="odsProductSame" runat="server" SelectMethod="ProductSameSelectAll"
                         TypeName="TLLib.Product">
                         <SelectParameters>
@@ -386,15 +402,39 @@
                                 Type="String" />
                         </SelectParameters>
                     </asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="odsSeal" runat="server" SelectMethod="ProductSelectAll"
+                        TypeName="TLLib.Product">
+                        <SelectParameters>
+                            <asp:Parameter Name="StartRowIndex" Type="String" />
+                            <asp:Parameter Name="EndRowIndex" Type="String" />
+                            <asp:Parameter Name="Keyword" Type="String" />
+                            <asp:Parameter Name="ProductName" Type="String" />
+                            <asp:Parameter Name="Description" Type="String" />
+                            <asp:Parameter Name="PriceFrom" Type="String" />
+                            <asp:Parameter Name="PriceTo" Type="String" />
+                            <asp:Parameter DefaultValue="3" Name="CategoryID" Type="String" />
+                            <asp:Parameter Name="ManufacturerID" Type="String" />
+                            <asp:Parameter Name="OriginID" Type="String" />
+                            <asp:Parameter Name="Tag" Type="String" />
+                            <asp:Parameter Name="InStock" Type="String" />
+                            <asp:Parameter Name="IsHot" Type="String" />
+                            <asp:Parameter Name="IsNew" Type="String" />
+                            <asp:Parameter Name="IsBestSeller" Type="String" />
+                            <asp:Parameter Name="IsSaleOff" Type="String" />
+                            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                            <asp:Parameter Name="FromDate" Type="String" />
+                            <asp:Parameter Name="ToDate" Type="String" />
+                            <asp:Parameter Name="Priority" Type="String" />
+                            <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                            <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
                     <asp:ListView ID="lstProductCategorySeal" runat="server" DataSourceID="odsProductCategorySeal"
                         EnableModelValidation="True" Visible="False">
                         <ItemTemplate>
                             <div class="panel panel-default">
                                 <div class="panel-heading" role="tab" id='<%# "heading" + Eval("ProductCategoryID") %>'>
                                     <h4 class="panel-title">
-                                        <%--<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                    href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Thiết kế in
-                                    ấn<span class="icon-plus"></span> </a>--%>
                                         <a href='<%# progressTitle(Eval("ProductCategoryName")) + "-sci-" + Eval("ProductCategoryID") + ".aspx" %>'>
                                             <%# Eval("ProductCategoryName")%><span class="icon-plus"></span> </a>
                                     </h4>
@@ -444,9 +484,9 @@
                 </div>
                 <div class="aside-box">
                     <h3>
-                        Thư viện ảnh</h3>
+                        Hotline: (08) 3826 1441 - 3826 1442</h3>
                 </div>
-                <div class="list-gallery gallery-icon">
+                <%--<div class="list-gallery gallery-icon">
                     <asp:ListView ID="lstGalleryTK" runat="server" DataSourceID="odsGalleryTK" EnableModelValidation="True"
                         Visible="False">
                         <ItemTemplate>
@@ -536,7 +576,7 @@
                     </asp:DataPager>
                 </div>
                 <div class="view-all">
-                    <a href="thu-vien.aspx">Xem tất cả</a></div>
+                    <a href="thu-vien.aspx">Xem tất cả</a></div>--%>
             </div>
         </div>
     </div>
