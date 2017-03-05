@@ -31,9 +31,11 @@
         </asp:ObjectDataSource>
         <div class="text-banner">
             <p>
-                <strong>liên hệ với chúng tôi</strong></p>
+                <strong>liên hệ với chúng tôi</strong>
+            </p>
             <p>
-                Chúng tôi luôn chào đón mọi thắc mắc & ý kiến đóng góp từ bạn</p>
+                Chúng tôi luôn chào đón mọi thắc mắc & ý kiến đóng góp từ bạn
+            </p>
         </div>
     </div>
     <div class="container-bg">
@@ -45,39 +47,70 @@
         <div class="container">
             <div class="row wrap-contact">
                 <div class="col-md-6">
-                    <div class="address-contact">
-                        <h4 class="text-uppercase">
-                            công ty cổ phần nam hải</h4>
-                        <p>
-                            <span class="fa fa-map-marker"></span>12 Bis - Tôn Đản, Phường 13, Quận 4, TP. Hồ
-                            Chí Minh</p>
-                        <p>
-                            <span class="fa fa-phone"></span>(08) 3826 1441 - 3826 1442
-                        </p>
-                        <p>
-                            <span class="fa fa-fax"></span>Fax:(0.8) 3940 4625 - 3941 4609</p>
-                        <p>
-                            <span class="fa fa-envelope"></span><a href="mailto:namhaico@hcm.vnn.vn">namhaico@hcm.vnn.vn</a></p>
-                        <p>
-                            <span class="fa fa-globe"></span>Websie:<a href="http://www.namhaico.com.vn"> www.namhaico.com.vn</a> - <a target="_blank" href="http://www.namhaico.vn"> www.namhaico.vn </a></p>
-                        <p>
-                            <span class="fa fa-facebook-square"></span>Facebook:<a href="http://www.facebook.com/namhaicompany">
-                                 www.facebook.com/namhaicompany</a></p>
-                        <h3 class="text-uppercase">
-                            thời gian làm việc</h3>
-                        <p>
-                            Thứ 2 - 7: 8:00 AM - 5:00 PM (CN nghỉ)</p>
-                        <br />
-                        <div class="wrap-node">
-                            Hãy liên hệ chúng tôi theo địa chỉ có trên bản đồ hoặc gửi tin nhắn cho chúng tôi
+
+                    <asp:ListView ID="lstContact" runat="server" DataSourceID="odsContact"
+                        EnableModelValidation="True">
+                        <ItemTemplate>
+                            <div class="address-contact">
+                                <h4 class="text-uppercase"><%# Eval("ArticleTitle") %></h4>
+                                <p>
+                                    <span class="fa fa-map-marker"></span><%# Eval("Description") %>
+                                </p>
+                                <p>
+                                    <span class="fa fa-phone"></span><%# Eval("Tag") %>
+                                </p>
+                                <p>
+                                    <span class="fa fa-fax"></span>Fax: <%# Eval("MetaTittle") %>
+                                </p>
+                                <p>
+                                    <span class="fa fa-envelope"></span><a target="_blank" href='<%# "mailto:" + Eval("MetaDescription") %>'> <%# Eval("MetaDescription") %></a>
+                                </p>
+                                <p>
+                                    <span class="fa fa-globe"></span>Websie:<a href="http://www.namhaico.com.vn"> www.namhaico.com.vn</a> - <a target="_blank" href="http://www.namhaico.vn">www.namhaico.vn </a>
+                                </p>
+                                <p>
+                                    <span class="fa fa-facebook-square"></span>Facebook: <a target="_blank" href='<%# Eval("TagEn") %>'><%# Eval("TagEn") %></a>
+                                </p>
+                                <h3 class="text-uppercase">thời gian làm việc</h3>
+                                <p>
+                                    Thứ 2 - 7: 8:00 AM - 5:00 PM (CN nghỉ)
+                                </p>
+                                <br />
+                                <div class="wrap-node">
+                                    Hãy liên hệ chúng tôi theo địa chỉ có trên bản đồ hoặc gửi tin nhắn cho chúng tôi
                             theo mẫu form sau đây, chúng tôi sẽ trả lời sớm nhất ngay khi nhận được email của
-                            quý khách.</div>
-                    </div>
+                            quý khách.
+                                </div>
+                            </div>
+                        </ItemTemplate>
+                        <LayoutTemplate>
+                            <span runat="server" id="itemPlaceholder" />
+                        </LayoutTemplate>
+                    </asp:ListView>
+                    <asp:ObjectDataSource ID="odsContact" runat="server" SelectMethod="ArticleSelectAll"
+                        TypeName="TLLib.Article">
+                        <SelectParameters>
+                            <asp:Parameter DefaultValue="1" Name="StartRowIndex" Type="String" />
+                            <asp:Parameter DefaultValue="1" Name="EndRowIndex" Type="String" />
+                            <asp:Parameter Name="Keyword" Type="String" />
+                            <asp:Parameter Name="ArticleTitle" Type="String" />
+                            <asp:Parameter Name="Description" Type="String" />
+                            <asp:Parameter DefaultValue="3" Name="ArticleCategoryID" Type="String" />
+                            <asp:Parameter Name="Tag" Type="String" />
+                            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                            <asp:Parameter Name="IsHot" Type="String" />
+                            <asp:Parameter Name="IsNew" Type="String" />
+                            <asp:Parameter Name="FromDate" Type="String" />
+                            <asp:Parameter Name="ToDate" Type="String" />
+                            <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                            <asp:Parameter Name="Priority" Type="String" />
+                            <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
                 </div>
                 <div class="col-md-6">
                     <div class="wrap-send">
-                        <h4 class="text-uppercase">
-                            gửi lời nhắn</h4>
+                        <h4 class="text-uppercase">gửi lời nhắn</h4>
                         <div class="contact-w">
                             <div class="contact-input">
                                 <asp:TextBox ID="txtTitle" CssClass="contact-textbox" runat="server"></asp:TextBox>
