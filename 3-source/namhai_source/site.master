@@ -73,6 +73,17 @@ _.push(o)
 type = "text/javascript"; e.parentNode.insertBefore($, e)
         })(document, "script");
 </script>
+    <script type="text/javascript">
+        $(document).bind("contextmenu cut copy", function (e) {
+            e.preventDefault();
+        });
+        $(document).bind("mousedown", function (e) {
+            return false;
+        });
+        $(document).on("dragstart", function (e) {
+            return false;
+        });
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
